@@ -1,0 +1,298 @@
+* {
+  box-sizing: border-box;
+}
+
+/* color scheme sourced from http://khroma.co/generator/ */
+:root {
+  --outer-space: #33393f;
+  --bright-turquoise: #2aefcb;
+  --gin: #e0eae4;
+  --heliotrope: #e866ec;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  line-height: 1.5;
+  background-color: rgb(243, 238, 229);
+}
+
+/* Navigation CSS */
+#navBar {
+  cursor: default;
+  display: flex;
+  flex-direction: row;
+  margin: 0px;
+}
+#navBar h1 {
+  width: 25%;
+  font-weight: 500;
+}
+#navigation {
+  display: flex;
+  width: 75%;
+  align-items: right;
+  justify-content: space-evenly;
+}
+#navigation a {
+  cursor: pointer;
+  text-decoration: none;
+  color: wheat;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+header {
+  width: 96%;
+  margin: 1.5rem;
+  padding: 1rem;
+  text-align: left;
+  background-color: #33393f;
+  color: wheat;
+}
+
+header h1.page-title {
+  padding: 1rem 1.2rem;
+  font-size: 4.5rem;
+}
+
+main {
+  width: 96%;
+  margin: 2rem auto;
+}
+
+.hero-banner {
+  margin: 1.5rem;
+  width: 96%;
+  padding: 1.0rem;
+  display: grid;
+  grid-template-columns: 25% 75%;
+  grid-template-rows:  1fr;
+  grid-template-areas:
+    "self bkgd"
+  ;
+
+}
+
+#self {
+  grid-area: self;
+  height: 200px;
+  background-image: url("../images/faceless-portrait.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover; 
+
+}
+
+#bkgd {
+  grid-area: bkgd;
+  text-align: right;
+  color: white;
+  background-image: url("../images/week2-bkgnd.png");
+  background-repeat: no-repeat;
+  background-size: cover; 
+
+}
+
+#page-wrapper {
+  display: grid;
+
+  grid-template-columns: 25% 75%;
+  grid-template-rows: 30% 65% 5%;
+  grid-template-areas:
+    "about aboutDetails"
+    "work workExamples"
+    "contact contactDetails"
+    
+  ;
+
+}
+
+#about {
+  grid-area: about;
+  padding: 10px 40px 20px 20px;
+  color: #14406c;
+}
+#about h2 {
+
+  font-weight: 500;
+  font-size: large;
+}
+#work h2 {
+
+  font-weight: 500;
+  font-size: large;
+}
+#contact h2 {
+
+  font-weight: 500;
+  font-size: large;
+  padding-top: 20px;
+}
+
+#aboutDetails {
+  grid-area: aboutDetails;
+  align-content: start;
+  margin: 0px;
+}
+
+#work {
+  grid-area: work;
+  padding: 10px 40px 20px 20px;
+  color: #14406c;
+}
+
+#workExamples {
+  grid-area: workExamples;
+  align-items: right;
+  align-content: space-around;
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "example1 example2"
+    "example3 example4"
+
+  ;
+}
+
+#example1 {
+  grid-area: example1;
+  background-image: url("../images/02-portfolio-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 300px;
+  height: 200px;
+  margin: 0px;
+  border: 1px solid black;
+  
+}
+#example1:hover {
+    background-size: 150%;
+}
+
+
+
+#example2 {
+  grid-area: example2;
+  background-image: url("../images/02-portfolio-2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 300px;
+  height: 200px;
+  border: 1px solid black;
+}
+#example2:hover {
+  background-size: 150%;
+}
+#example3 {
+  grid-area: example3;
+  background-image: url("../images/02-portfolio-3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 300px;
+  height: 200px;
+  border: 1px solid black;
+}
+#example3:hover {
+  background-size: 150%;
+}
+#example4 {
+  grid-area: example4;
+  background-image: url("../images/02-portfolio-4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 300px;
+  height: 200px;
+  border: 1px solid black;
+}
+#example4:hover {
+  background-size: 150%;
+}
+.text {
+  background: rgb(0, 0, 0,0.7);
+  width: 100%;
+  padding: 20px 40px;
+  color: white;
+}
+
+.text p {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.text h3 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#contact {
+  grid-area: contact;
+  padding: 10px 40px 20px 20px;
+  color: #14406c;
+}
+#contactDetails {
+  grid-area: contactDetails;
+  align-content: start;
+  display: flex;
+  padding: 30px;
+  width: 75%;
+  align-items: right;
+  justify-content: space-evenly;
+}
+
+
+footer {
+  margin: 1.5rem;
+  width: 96%;
+  padding: 1.0rem;
+  text-align: center;
+  background-color: #33393f;
+  font-size: x-small;
+  color: beige;
+}
+
+@media only screen and (max-width: 790px) {
+  /* Your new CSS selectors go here */
+  #navigation {
+    display: none;
+  }
+
+}
+@media only screen and (max-width: 600px) {
+  /* Your new CSS selectors go here */
+  #headline {
+    position: static;
+    margin: 20px;
+  }
+  #hero-banner {
+    grid-template-areas:
+    "self"
+   ;
+  }
+  #workExamples {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "example1"
+      "example2"
+      "example3"
+      "example4"
+    ;
+  }
+  #contactDetails {
+    flex-direction: column;
+    padding-top: 50px;
+  }
+}
