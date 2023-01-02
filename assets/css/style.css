@@ -89,11 +89,9 @@ main {
 
 #self {
   grid-area: self;
-  height: 200px;
-  background-image: url("../images/faceless-portrait.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover; 
-
+}
+#self .text {
+  width: auto;
 }
 
 #bkgd {
@@ -115,15 +113,14 @@ main {
     "about aboutDetails"
     "work workExamples"
     "contact contactDetails"
-    
   ;
-
 }
 
 #about {
   grid-area: about;
   padding: 10px 40px 20px 20px;
   color: #14406c;
+  align-content: start;
 }
 #about h2 {
 
@@ -136,10 +133,9 @@ main {
   font-size: large;
 }
 #contact h2 {
-
   font-weight: 500;
   font-size: large;
-  padding-top: 20px;
+  padding-top: 30px;
 }
 
 #aboutDetails {
@@ -152,81 +148,83 @@ main {
   grid-area: work;
   padding: 10px 40px 20px 20px;
   color: #14406c;
+  align-content: start;
+}
+
+.content img:hover {
+  border: 5px solid;
+  border-color: aqua;
 }
 
 #workExamples {
   grid-area: workExamples;
-  align-items: right;
-  align-content: space-around;
+ /* align-items: right;
+  align-content: space-around;*/
   display: grid;
 
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 300px 300px;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-areas:
-    "example1 example2"
-    "example3 example4"
-
+    "example1 example1"
+    "example2 example3"
+    "example4 example5"
+    "filler filler"
   ;
+}
+
+#filler {
+  grid-area: filler;
+  width: 100%;
+  height: 200px;
+  margin: 0px;
+  border: 1px solid black;
 }
 
 #example1 {
   grid-area: example1;
-  background-image: url("../images/02-portfolio-1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 300px;
+  width: 100%;
   height: 200px;
   margin: 0px;
   border: 1px solid black;
-  
 }
-#example1:hover {
-    background-size: 150%;
-}
-
-
 
 #example2 {
   grid-area: example2;
-  background-image: url("../images/02-portfolio-2.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
   width: 300px;
   height: 200px;
   border: 1px solid black;
 }
-#example2:hover {
-  background-size: 150%;
-}
+
 #example3 {
   grid-area: example3;
-  background-image: url("../images/02-portfolio-3.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
   width: 300px;
   height: 200px;
   border: 1px solid black;
 }
-#example3:hover {
-  background-size: 150%;
-}
+
 #example4 {
   grid-area: example4;
-  background-image: url("../images/02-portfolio-4.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
   width: 300px;
   height: 200px;
   border: 1px solid black;
 }
-#example4:hover {
-  background-size: 150%;
+
+#example5 {
+  grid-area: example5;
+  width: 300px;
+  height: 200px;
+  border: 1px solid black;
 }
+
 .text {
-  background: rgb(0, 0, 0,0.7);
-  width: 100%;
-  padding: 20px 40px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  width: 300px;
   color: white;
+}
+
+#example1 .text {
+  width: 600px;
 }
 
 .text p {
@@ -241,22 +239,23 @@ main {
   grid-area: contact;
   padding: 10px 40px 20px 20px;
   color: #14406c;
+  align-content: start;
 }
 #contactDetails {
   grid-area: contactDetails;
   align-content: start;
   display: flex;
-  padding: 30px;
-  width: 75%;
+  padding-top: 50px;
   align-items: right;
   justify-content: space-evenly;
 }
 
 
 footer {
-  margin: 1.5rem;
+  margin: 1.0rem;
   width: 96%;
-  padding: 1.0rem;
+  height: 30px;
+  margin-top: auto;
   text-align: center;
   background-color: #33393f;
   font-size: x-small;
@@ -281,18 +280,26 @@ footer {
     "self"
    ;
   }
+  #example1 img {
+    width: 300px;
+  }
+  #example1 .text {
+    width: 300px;
+  }
+ 
   #workExamples {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 300px;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
       "example1"
       "example2"
       "example3"
       "example4"
+      "example5"
     ;
   }
   #contactDetails {
     flex-direction: column;
-    padding-top: 50px;
+    padding-top: 100px;
   }
 }
